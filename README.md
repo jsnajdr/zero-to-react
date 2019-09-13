@@ -1,0 +1,4 @@
+- rerender the whole UI
+- example with innerHTML
+- example with React
+- hydrating a SSR-ed markup

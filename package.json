@@ -1,0 +1,13 @@
+{
+	"name": "zero-to-react",
+	"version": "1.0.0",
+	"description": "Zero to React",
+	"scripts": {
+		"start": "serve"
+	},
+	"author": "Jarda Snajdr",
+	"license": "GPL",
+	"dependencies": {
+		"serve": "^11.1.0"
+	}
+}
