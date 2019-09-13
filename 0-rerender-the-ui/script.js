@@ -54,6 +54,8 @@ function doSearch() {
 
 // Proto-React implementation that rerenders UI on every state update
 function htmlstring(ui) {
+	// flatten nested arrays:
+	// [ 'a', false, [ 'b', [ 'c', null, 'd' ], 'e' ], 'f' ] to 'abcdef'
 	if (Array.isArray(ui)) {
 		return ui.map(htmlstring).join('');
 	} else if (typeof ui === 'string') {

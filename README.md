@@ -22,7 +22,9 @@ Only here we start to need a build step.
 
 ## Local state
 
-Rerender just parts of the tree
+Rerender just parts of the tree. Maintain local private state of a component.
+
+Task: Display the cost only after clicking "more". Hide it after clicking "less".
 
 ## HOCs and data binding
 
