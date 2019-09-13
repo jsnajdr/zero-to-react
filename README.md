@@ -1,5 +1,11 @@
 # Zero to React
 
+```
+npm install
+npm start
+```
+Open `localhost:5000` in your browser.
+
 ## Rerender the UI
 
 Convert state data to a concanenated HTML string.
