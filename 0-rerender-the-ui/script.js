@@ -68,11 +68,14 @@ function htmlstring(ui) {
 function render() {
 	const container = document.querySelector('main');
 	const ui = UI(state);
-	container.innerHTML = htmlstring(ui);
+	const html = htmlstring(ui);
+	console.log('rendering:', html);
+	container.innerHTML = html;
 }
 
 function setState(newState) {
 	state = { ...state, ...newState };
+	console.log('state updated to:', state);
 	render();
 }
 

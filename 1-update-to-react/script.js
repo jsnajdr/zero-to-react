@@ -26,7 +26,8 @@ function LoadingPlaceholder(props) {
 }
 
 function DomainsList(props) {
-	return React.createElement('ul', null, props.domains.map(Domain));
+	const domains = props.domains.map(domain => React.createElement(Domain, domain));
+	return React.createElement('ul', null, domains);
 }
 
 function Domain(props) {
@@ -55,11 +56,13 @@ function doSearch(event) {
 function render() {
 	const container = document.querySelector('main');
 	const ui = React.createElement(UI, state);
+	console.log('rendering:', ui);
 	ReactDOM.render(ui, container);
 }
 
 function setState(newState) {
 	state = { ...state, ...newState };
+	console.log('state updated to:', state);
 	render();
 }
 
