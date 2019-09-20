@@ -17,9 +17,13 @@ suggestions( { query, include_wordpressdotcom: true });
 ```
 Or use `quantity` or `include_dotblogsubdomain`.
 
+## Rerender the UI (VDOM)
+
+Only do partial re-renders by introducing VDOM and re-rendering only what's changed. Verify that it solves the focus problems.
+
 ## Update to React
 
-Do the same thing, but with React elements. Verify that it solves the focus problems.
+Do the same thing, but with React elements. Code is much simpler.
 
 ## JSX Sugar
 
