@@ -8,7 +8,7 @@ let state = {
 
 // UI components, mapping props (data) to UI (HTML markup)
 function UI(props) {
-	return VDOM().h( 'div', {}, [
+	return VDOM().createElement( 'div', {}, [
 		SearchBox({ query: props.query, onChange: 'doSearch()' }),
 		props.loading && LoadingPlaceholder({ query: props.query }),
 		props.results && DomainsList({ domains: props.results }),
@@ -16,22 +16,22 @@ function UI(props) {
 }
 
 function SearchBox(props) {
-	return VDOM().h( 'div', {}, [
+	return VDOM().createElement( 'div', {}, [
 		'Enter a domain name or keyword: ',
-		VDOM().h( 'input', { type: 'text', value: props.query, onChange: props.onChange } ),
+		VDOM().createElement( 'input', { type: 'text', value: props.query, onChange: props.onChange } ),
 	] );
 }
 
 function LoadingPlaceholder(props) {
-	return VDOM().h( 'div', null, [ 'Searching for ', props.query, '...' ] );
+	return VDOM().createElement( 'div', null, [ 'Searching for ', props.query, '...' ] );
 }
 
 function DomainsList(props) {
-	return VDOM().h( 'ul', null, props.domains.map(Domain) );
+	return VDOM().createElement( 'ul', null, props.domains.map(Domain) );
 }
 
 function Domain(props) {
-	return VDOM().h( 'li', null, [ props.domain_name, ' (', props.cost, ')' ] );
+	return VDOM().createElement( 'li', null, [ props.domain_name, ' (', props.cost, ')' ] );
 }
 
 // Event handlers
@@ -58,7 +58,7 @@ function render() {
 	const ui = UI(state);
 
 	console.log('rendering:', ui);
-	VDOM().updateElement( container, ui, state._currentView );
+	VDOM().render( container, ui, state._currentView );
 
 	state._currentView = ui;
 }

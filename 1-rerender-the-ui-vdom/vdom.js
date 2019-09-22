@@ -26,14 +26,14 @@ function VDOM() {
 
 	// Credits to: https://github.com/lucasfcosta/vdom-example
 	return {
-		h: function( type, props, children = [] ) {
+		createElement: function( type, props, children = [] ) {
 			props = props || {};
 			children = children || {};
 
 			return { type, props, children };
 		},
 
-		updateElement: function( $parent, newNode, oldNode, index = 0 ) {
+		render: function( $parent, newNode, oldNode, index = 0 ) {
 			if ( ! oldNode ) {
 				$parent.appendChild(
 					createElement( newNode )
@@ -51,7 +51,7 @@ function VDOM() {
 				const newLength = newNode.children.length;
 				const oldLength = oldNode.children.length;
 				for ( let i = 0; i < Math.max( newLength, oldLength ); i++ ) {
-					this.updateElement(
+					this.render(
 						$parent.childNodes[ index ],
 						newNode.children[ i ],
 						oldNode.children[ i ],
